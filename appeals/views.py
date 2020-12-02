@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http  import HttpResponse
+from django.shortcuts import render
 
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
@@ -8,6 +10,11 @@ from appeals.models import Appeal, Donation
 from appeals.serializers import AppealSerializer, DonationSerializer
 from rest_framework.decorators import api_view
 # Create your views here.
+
+
+def home(request):
+
+    return render(request, 'index.html')
 
 @api_view(['GET', 'POST','DELETE'])
 def appeal_list(request):
