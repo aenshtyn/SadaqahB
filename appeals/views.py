@@ -12,9 +12,7 @@ from rest_framework.decorators import api_view
 # Create your views here.
 
 
-def home(request):
 
-    return render(request, 'index.html')
 
 @api_view(['GET', 'POST','DELETE'])
 def appeal_list(request):
@@ -106,3 +104,8 @@ def donation_list(request):
     elif request.method == 'DELETE':
         count = Donation.objects.all().delete()
         return JsonResponse({'message': '{} donations were deleted successfully'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
+
+
+def home(request):
+
+    return render(request, 'index.html')
