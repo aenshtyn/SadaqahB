@@ -62,7 +62,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-
     # Django REST framework 
     'rest_framework',
     'appeals',
